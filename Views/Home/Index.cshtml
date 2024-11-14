@@ -1,32 +1,10 @@
-﻿@model IEnumerable<Task>
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
 
-<h2>Liste des tâches</h2>
+<h2>Bienvenue</h2>
 
-<p>
-    <a href="/Tasks/Create" class="btn btn-primary">Créer une nouvelle tâche</a>
-</p>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Titre</th>
-            <th>Description</th>
-            <th>Date d'échéance</th>
-            <th>Complétée</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var task in Model)
-        {
-            <tr>
-                <td>@task.Id</td>
-                <td>
-                    <a href="/Tasks/Edit/@task.Id" class="btn btn-warning">Modifier</a>
-                    <a href="/Tasks/Delete/@task.Id" class="btn btn-danger">Supprimer</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="d-flex justify-content-center mt-4">
+    <a href="/Account/Login" class="btn btn-outline-primary me-3">Login</a>
+    <a href="/Account/Signup" class="btn btn-outline-success">Signup</a>
+</div>

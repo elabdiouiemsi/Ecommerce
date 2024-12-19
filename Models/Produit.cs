@@ -8,6 +8,6 @@ public class Produit
     public Category Category { get; set; }
     public string ImageUrl { get; set; }
     public int Quantite { get; set; }
-    public ICollection<CommandeItem> CommandeItems { get; set; }
+    public ICollection<CommandeItem> CommandeItems { get; set; } 
     public ICollection<PanierItem> PanierItems { get; set; }
 }

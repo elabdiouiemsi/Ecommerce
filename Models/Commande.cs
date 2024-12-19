@@ -5,6 +5,6 @@ public class Commande
     public DateTime DateCommande { get; set; }
     public decimal TotalPayer { get; set; }
     public string CommandeStatus { get; set; }
-    public List<CommandeItem> CommandeItems { get; set; }
+    public List<CommandeItem> CommandeItems { get; set; } = new List<CommandeItem>();
     public Consomateur Consomateur { get; set; }
 }

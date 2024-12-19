@@ -16,7 +16,7 @@ namespace ecommerce.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "8.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -83,7 +83,7 @@ namespace ecommerce.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("TotalPayer")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -107,7 +107,7 @@ namespace ecommerce.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Prix")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("ProduitId")
                         .HasColumnType("int");
@@ -191,7 +191,7 @@ namespace ecommerce.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Prix")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("ProduitId")
                         .HasColumnType("int");
@@ -232,7 +232,7 @@ namespace ecommerce.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Prix")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("Quantite")
                         .HasColumnType("int");

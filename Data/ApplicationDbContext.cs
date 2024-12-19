@@ -28,8 +28,9 @@ public class ApplicationDbContext : DbContext
         .WithOne(ci => ci.Commande)
         .HasForeignKey(ci => ci.CommandeId)
         .OnDelete(DeleteBehavior.Cascade);
+        
 
-    modelBuilder.Entity<Panier>()
+        modelBuilder.Entity<Panier>()
         .HasMany(p => p.PanierItems)
         .WithOne(pi => pi.Panier)
         .HasForeignKey(pi => pi.PanierId)
@@ -58,5 +59,23 @@ public class ApplicationDbContext : DbContext
         .WithOne(co => co.Consomateur)
         .HasForeignKey(co => co.UserId)
         .OnDelete(DeleteBehavior.Cascade);
-}
+
+
+        modelBuilder.Entity<Commande>()
+    .Property(c => c.TotalPayer)
+    .HasColumnType("decimal(18, 2)");
+
+        modelBuilder.Entity<CommandeItem>()
+            .Property(ci => ci.Prix)
+            .HasColumnType("decimal(18, 2)");
+
+        modelBuilder.Entity<PanierItem>()
+            .Property(pi => pi.Prix)
+            .HasColumnType("decimal(18, 2)");
+
+        modelBuilder.Entity<Produit>()
+            .Property(p => p.Prix)
+            .HasColumnType("decimal(18, 2)");
+
+    }
 }

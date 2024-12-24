@@ -1,6 +1,9 @@
+using ecommerce.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +22,28 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<ApplicationDbContext>();
+
+    // Vérifiez si des catégories existent déjà, sinon les ajouter
+    if (!context.Categories.Any())
+    {
+        context.Categories.AddRange(
+            new Category { Nom = "Électronique" },
+            new Category { Nom = "Mode" },
+            new Category { Nom = "Maison et Jardin" },
+            new Category { Nom = "Sport" },
+            new Category { Nom = "Santé et Beauté" }
+        );
+
+        // Sauvegarder les changements dans la base de données
+        context.SaveChanges();
+    }
+}
+
 
 // Ajouter les rôles et un utilisateur Admin au démarrage
 using (var scope = app.Services.CreateScope())

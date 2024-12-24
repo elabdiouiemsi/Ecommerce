@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-namespace ecommerce.Controllers
-{
+namespace ecommerce.Controllers;
+    using ecommerce.Data;
+
     public class CommandeItemsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -165,4 +166,4 @@ namespace ecommerce.Controllers
             return _context.CommandeItems.Any(e => e.Id == id);
         }
     }
-}
+

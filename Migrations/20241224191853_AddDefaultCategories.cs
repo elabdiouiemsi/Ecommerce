@@ -5,7 +5,7 @@
 namespace ecommerce.Migrations
 {
     /// <inheritdoc />
-    public partial class haitham3 : Migration
+    public partial class AddDefaultCategories : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

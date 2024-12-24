@@ -10,25 +10,60 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ecommerce</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">MonApplication</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Lien commun accessible à tous -->
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <form asp-area="Identity" asp-page="/Account/Logout" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-link nav-link">Se déconnecter</button>
+                            </form>
                         </li>
+
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <!-- Options spécifiques à l'administrateur -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Gestion des produits
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Produits" asp-action="Index">Liste des produits</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Produits" asp-action="Create">Ajouter un produit</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        else if (User.IsInRole("Consumer"))
+                        {
+                            <!-- Options pour le consommateur -->
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Produit" asp-action="Search">Chercher des produits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Panier" asp-action="Index">Mon panier</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Commande" asp-action="Index">Passer une commande</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
         </nav>
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">

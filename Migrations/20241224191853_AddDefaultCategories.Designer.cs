@@ -5,14 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using ecommerce.Data;
 
 #nullable disable
 
 namespace ecommerce.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241224151108_InitialIdentitySetup")]
-    partial class InitialIdentitySetup
+    [Migration("20241224191853_AddDefaultCategories")]
+    partial class AddDefaultCategories
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

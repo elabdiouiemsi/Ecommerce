@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ecommerce.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -43,16 +44,16 @@ namespace ecommerce.Controllers
             return View(produit);
         }
 
-        [HttpGet]
         public IActionResult Create()
-        {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Nom");
-            return View();
-        }
+{
+    // Vous passez la liste des catégories à la vue via ViewBag
+    ViewBag.category = _context.Categories.ToList();
+    return View();
+}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProduitId,Nom,Prix,Description,CategoryId,ImageUrl,Quantite")] Produit produit)
+[HttpPost]
+[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("ProduitId,Nom,Prix,Description,ImageUrl,Quantite,CategoryId")] Produit produit)
         {
             if (ModelState.IsValid)
             {
@@ -60,62 +61,58 @@ namespace ecommerce.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Nom", produit.CategoryId);
+            ViewBag.category = _context.Categories.ToList();
             return View(produit);
         }
 
-        // GET: Produits/Edit/5
         public async Task<IActionResult> Edit(int? id)
+{
+    if (id == null)
+    {
+        return NotFound();
+    }
+
+    var produit = await _context.Produits.FindAsync(id);
+    if (produit == null)
+    {
+        return NotFound();
+    }
+    ViewBag.category = _context.Categories.ToList();  // Récupération des catégories pour le dropdown
+    return View(produit);
+}
+
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Edit(int id, [Bind("ProduitId,Nom,Prix,Description,CategoryId,ImageUrl,Quantite")] Produit produit)
+{
+    if (id != produit.ProduitId)
+    {
+        return NotFound();
+    }
+
+    if (ModelState.IsValid)
+    {
+        try
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var produit = await _context.Produits.FindAsync(id);
-            if (produit == null)
-            {
-                return NotFound();
-            }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", produit.CategoryId);
-            return View(produit);
+            _context.Update(produit);
+            await _context.SaveChangesAsync();
         }
-
-        // POST: Produits/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProduitId,Nom,Prix,Description,CategoryId,ImageUrl,Quantite")] Produit produit)
+        catch (DbUpdateConcurrencyException)
         {
-            if (id != produit.ProduitId)
+            if (!ProduitExists(produit.ProduitId))
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            else
             {
-                try
-                {
-                    _context.Update(produit);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ProduitExists(produit.ProduitId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                throw;
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", produit.CategoryId);
-            return View(produit);
         }
+        return RedirectToAction(nameof(Index));
+    }
+    ViewBag.category = _context.Categories.ToList();  // Récupération des catégories pour le dropdown
+    return View(produit);
+}
 
         // GET: Produits/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -149,6 +146,15 @@ namespace ecommerce.Controllers
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        // Méthode privée pour éviter la répétition du code dans Create et Edit
+        private void PopulateCategoryDropDownList(object selectedCategory = null)
+        {
+            var categoriesQuery = from c in _context.Categories
+                                  orderby c.Nom
+                                  select c;
+            ViewData["CategoryId"] = new SelectList(categoriesQuery.AsNoTracking(), "CategoryId", "Nom", selectedCategory);
         }
 
         private bool ProduitExists(int id)

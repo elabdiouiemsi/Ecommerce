@@ -1,7 +1,64 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\elabd\\Desktop\\ecommerce\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\controllers\\produitscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:controllers\\produitscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\models\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:models\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\views\\produits\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:views\\produits\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\models\\panieritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:models\\panieritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\controllers\\adminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:controllers\\adminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\controllers\\panieritemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:controllers\\panieritemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\controllers\\commandeitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:controllers\\commandeitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\controllers\\commandescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:controllers\\commandescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\controllers\\panierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:controllers\\panierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|c:\\users\\elabd\\desktop\\ecommerce\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B606141-4EC6-4912-A32D-A49C7E2DA5FF}|ecommerce.csproj|solutionrelative:migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +75,188 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Produit.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Models\\Produit.cs",
+              "RelativeDocumentMoniker": "Models\\Produit.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Models\\Produit.cs",
+              "RelativeToolTip": "Models\\Produit.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAIwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:09:43.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProduitsController.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\ProduitsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProduitsController.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\ProduitsController.cs",
+              "RelativeToolTip": "Controllers\\ProduitsController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAQwDAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T18:05:26.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T18:35:15.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T18:05:26.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T18:53:21.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PanierItem.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Models\\PanierItem.cs",
+              "RelativeDocumentMoniker": "Models\\PanierItem.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Models\\PanierItem.cs",
+              "RelativeToolTip": "Models\\PanierItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:56:57.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Views\\Produits\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Produits\\Create.cshtml",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Views\\Produits\\Create.cshtml",
+              "RelativeToolTip": "Views\\Produits\\Create.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-24T19:38:45.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CommandeItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\CommandeItemsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CommandeItemsController.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\CommandeItemsController.cs",
+              "RelativeToolTip": "Controllers\\CommandeItemsController.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAuwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:17:10.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CommandesController.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\CommandesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CommandesController.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\CommandesController.cs",
+              "RelativeToolTip": "Controllers\\CommandesController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAQwAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:17:24.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminsController.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\AdminsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminsController.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\AdminsController.cs",
+              "RelativeToolTip": "Controllers\\AdminsController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:18:19.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PanierItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\PanierItemsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PanierItemsController.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\PanierItemsController.cs",
+              "RelativeToolTip": "Controllers\\PanierItemsController.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAYwKgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:16:56.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwDcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T18:21:10.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PaniersController.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\PaniersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaniersController.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Controllers\\PaniersController.cs",
+              "RelativeToolTip": "Controllers\\PaniersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:16:38.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\elabd\\Desktop\\ecommerce\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\elabd\\Desktop\\ecommerce\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:14:31.475Z",
+              "EditorCaption": ""
             }
           ]
         }

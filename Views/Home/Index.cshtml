@@ -2,9 +2,12 @@
     ViewData["Title"] = "Accueil";
 }
 
-<h2>Bienvenue</h2>
+<h2 class="text-center">Bienvenue</h2>
 
 <div class="d-flex justify-content-center mt-4">
-    <a href="/Account/Login" class="btn btn-outline-primary me-3">Login</a>
-    <a href="/Account/Signup" class="btn btn-outline-success">Signup</a>
+    <!-- Lien pour la page de connexion (Login) -->
+    <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-primary me-3">Login</a>
+
+    <!-- Lien pour la page d'inscription (Register) -->
+    <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-success">Signup</a>
 </div>

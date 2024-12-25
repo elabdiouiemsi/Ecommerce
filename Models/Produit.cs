@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-public class Produit : IValidatableObject
+public class Produit
 {
     public int ProduitId { get; set; }
 
@@ -14,26 +13,18 @@ public class Produit : IValidatableObject
 
     public string Description { get; set; }
 
-    [Required]
-    public int CategoryId { get; set; }
-
-    public Category Category { get; set; }
+    
+    public int ? CategoryId { get; set; }
+    public Category ? Category { get; set; }
 
     public string ImageUrl { get; set; }
 
-    [Required]
-    [Range(1, int.MaxValue, ErrorMessage = "La quantité doit être au moins de 1.")]
+   
     public int Quantite { get; set; }
 
-    // Ajouter les propriétés manquantes
-    public ICollection<CommandeItem> CommandeItems { get; set; }
-    public ICollection<PanierItem> PanierItems { get; set; }
+   
+    public ICollection<CommandeItem> ? CommandeItems { get; set; }
 
-    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-    {
-        if (CategoryId <= 0)
-        {
-            yield return new ValidationResult("La catégorie est invalide.", new[] { nameof(CategoryId) });
-        }
-    }
+   
+    public ICollection<PanierItem> ? PanierItems { get; set; }
 }

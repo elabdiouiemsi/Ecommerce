@@ -1,0 +1,11 @@
+﻿@model Microsoft.AspNetCore.Identity.IdentityUser
+
+<h2>Modifier un utilisateur</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control" value="@Model.Email" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+</form>

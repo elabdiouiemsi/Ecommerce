@@ -33,10 +33,10 @@
                         {
                             <!-- Options spécifiques à l'administrateur -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProduits" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Gestion des produits
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownProduits">
                                     <li>
                                         <a class="dropdown-item" asp-controller="Produits" asp-action="Index">Liste des produits</a>
                                     </li>
@@ -45,8 +45,23 @@
                                     </li>
                                 </ul>
                             </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUsers" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Gestion des utilisateurs
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownUsers">
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Users" asp-action="Index">Liste des utilisateurs</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Users" asp-action="Create">Ajouter un utilisateur</a>
+                                    </li>
+                                </ul>
+                            </li>
                         }
-                        else if (User.IsInRole("Consumer"))
+
+                        else if (User.IsInRole("Consomateur"))
                         {
                             <!-- Options pour le consommateur -->
                             <li class="nav-item">

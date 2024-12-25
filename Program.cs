@@ -1,11 +1,18 @@
 using ecommerce.Data;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+
 
 // Ajouter le contexte de la base de données
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -49,35 +56,54 @@ using (var scope = app.Services.CreateScope())
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-    var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
-
-    // Définir les rôles à créer
-    string[] roleNames = { "Admin", "Consomateur" };
-    foreach (var roleName in roleNames)
+    try
     {
-        if (!await roleManager.RoleExistsAsync(roleName))
+        var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+        var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
+
+        // Définir les rôles à créer
+        string[] roleNames = { "Admin", "Consomateur" };
+        foreach (var roleName in roleNames)
         {
-            await roleManager.CreateAsync(new IdentityRole(roleName));
+            if (!await roleManager.RoleExistsAsync(roleName))
+            {
+                var roleResult = await roleManager.CreateAsync(new IdentityRole(roleName));
+                if (!roleResult.Succeeded)
+                {
+                    Console.WriteLine($"Erreur lors de la création du rôle {roleName}: {string.Join(", ", roleResult.Errors.Select(e => e.Description))}");
+                }
+            }
+        }
+
+        // Créer un utilisateur Admin par défaut
+        var adminEmail = "admin@example.com";
+        var adminPassword = "Admin@123"; // Remplacer par une variable d'environnement
+        if (await userManager.FindByEmailAsync(adminEmail) == null)
+        {
+            var adminUser = new IdentityUser
+            {
+                UserName = adminEmail,
+                Email = adminEmail,
+                EmailConfirmed = true // Simuler la confirmation d'email
+            };
+            var userResult = await userManager.CreateAsync(adminUser, adminPassword);
+            if (userResult.Succeeded)
+            {
+                var roleAssignResult = await userManager.AddToRoleAsync(adminUser, "Admin");
+                if (!roleAssignResult.Succeeded)
+                {
+                    Console.WriteLine($"Erreur lors de l'ajout de l'utilisateur Admin au rôle : {string.Join(", ", roleAssignResult.Errors.Select(e => e.Description))}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Erreur lors de la création de l'utilisateur Admin : {string.Join(", ", userResult.Errors.Select(e => e.Description))}");
+            }
         }
     }
-
-    // Créer un utilisateur Admin par défaut
-    var adminEmail = "admin@example.com";
-    var adminPassword = "Admin@123"; // Utilisez un mot de passe fort
-    if (await userManager.FindByEmailAsync(adminEmail) == null)
+    catch (Exception ex)
     {
-        var adminUser = new IdentityUser
-        {
-            UserName = adminEmail,
-            Email = adminEmail,
-            EmailConfirmed = true // Simuler la confirmation d'email
-        };
-        var result = await userManager.CreateAsync(adminUser, adminPassword);
-        if (result.Succeeded)
-        {
-            await userManager.AddToRoleAsync(adminUser, "Admin");
-        }
+        Console.WriteLine($"Erreur lors de l'initialisation des rôles et utilisateurs : {ex.Message}");
     }
 }
 
@@ -105,6 +131,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
+
+
 
 app.MapRazorPages();
 

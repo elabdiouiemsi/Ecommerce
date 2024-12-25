@@ -12,8 +12,8 @@ using ecommerce.Data;
 namespace ecommerce.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241224191853_AddDefaultCategories")]
-    partial class AddDefaultCategories
+    [Migration("20241225184754_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

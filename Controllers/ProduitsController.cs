@@ -53,18 +53,21 @@ namespace ecommerce.Controllers
 
 [HttpPost]
 [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Create([Bind("ProduitId,Nom,Prix,Description,ImageUrl,Quantite,CategoryId")] Produit produit)
         {
             if (ModelState.IsValid)
             {
+                // Ajouter le produit à la base de données
                 _context.Add(produit);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            // Recharger les catégories si la validation échoue
             ViewBag.category = _context.Categories.ToList();
             return View(produit);
         }
-
         public async Task<IActionResult> Edit(int? id)
 {
     if (id == null)
@@ -83,7 +86,7 @@ namespace ecommerce.Controllers
 
 [HttpPost]
 [ValidateAntiForgeryToken]
-public async Task<IActionResult> Edit(int id, [Bind("ProduitId,Nom,Prix,Description,CategoryId,ImageUrl,Quantite")] Produit produit)
+public async Task<IActionResult> Edit(int id, [Bind("ProduitId,Nom,Prix,Description,ImageUrl,Quantite,CategoryId")] Produit produit)
 {
     if (id != produit.ProduitId)
     {
@@ -92,23 +95,11 @@ public async Task<IActionResult> Edit(int id, [Bind("ProduitId,Nom,Prix,Descript
 
     if (ModelState.IsValid)
     {
-        try
-        {
-            _context.Update(produit);
-            await _context.SaveChangesAsync();
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!ProduitExists(produit.ProduitId))
-            {
-                return NotFound();
-            }
-            else
-            {
-                throw;
-            }
-        }
-        return RedirectToAction(nameof(Index));
+                _context.Update(produit);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+
+                
     }
     ViewBag.category = _context.Categories.ToList();  // Récupération des catégories pour le dropdown
     return View(produit);
